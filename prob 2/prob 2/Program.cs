@@ -14,7 +14,7 @@ namespace prob_2
             Complex[,] matrix = new Complex[n,n];
             int x = 0, y = 0 ;
 
-            //Citirea matricii din fisier
+
             foreach (var line in input)
             {
                 y = 0;
@@ -28,11 +28,20 @@ namespace prob_2
                 x++;
             }
 
-            //Verificarea daca matricea este hermetica
-            bool ok = true;
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < n; j++)
+                {
+                    Console.Write(matrix[i, j].Real +"+"+ matrix[i, j].Imaginary+"i\t");
+                }
+                Console.WriteLine();
+            }
+
+
+            bool ok = true;
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = i; j < n; j++)
                 {
                     if (matrix[i,j]  != Complex.Conjugate(matrix[j,i]))
                     {

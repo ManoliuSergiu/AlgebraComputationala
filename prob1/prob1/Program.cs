@@ -63,7 +63,7 @@ namespace prob1
                 }
             }
 
-            //
+            
             results[n - 1] = matrix[n - 1, n];
             for (int i = n - 2; i >= 0; i--)
             {
